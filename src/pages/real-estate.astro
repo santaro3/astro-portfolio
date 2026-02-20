@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Real Estate";
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+---
+
+<Layout title={pageTitle}>
+	<h1 class="font-serif text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight mb-12">{pageTitle}</h1>
+
+	<section class="mb-16 sm:mb-24">
+		<h2 class="font-serif text-2xl italic mb-10 border-b border-[var(--border-main)] pb-2">Real Estate Investment & Analytics</h2>
+		
+		<div class="flex flex-col md:flex-row gap-8 items-center">
+			<div class="w-full md:flex-1">
+				<h3 class="text-lg font-medium mb-6 opacity-80">Co-Founder & STR Investor</h3>
+				
+				<p class="text-lg leading-relaxed mb-4 opacity-90">
+					My business partner and I manage a portfolio of Short-Term Rentals (STRs) across the United States. We differentiate our strategy by applying engineering rigor and data science analytics to asset selection and management.
+				</p>
+				<p class="text-lg leading-relaxed opacity-90">
+					Rather than relying on intuition, we utilize data-driven methodologies to identify high-yield markets and optimize property performance. I am deeply immersed in the real estate ecosystem, constantly refining our strategies through industry conferences, market analysis, and continuous education.
+				</p>
+			</div>
+			<div class="w-full md:w-1/3 flex justify-center">
+				<img src={`${base}/Real_Estate_Data_Analytics.png`} alt="Short Term Rental Property" class="rounded-lg w-full h-64 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2 class="font-serif text-2xl italic mb-10 border-b border-[var(--border-main)] pb-2">Cross Border Real Estate Solutions</h2>
+
+		<div class="flex flex-col md:flex-row gap-8 items-center">
+			<div class="w-full md:flex-1">
+				<h3 class="text-lg font-medium mb-6 opacity-80">Co-Founder</h3>
+
+				<p class="text-lg leading-relaxed mb-4 opacity-90">
+					As Canadians pivoting to the US real estate market, my business partner and I navigated a complex web of regulatory hurdles—from optimizing business structures for taxation and liability to securing foreign national financing.
+				</p>
+				<p class="text-lg leading-relaxed opacity-90">
+					We learned that the learning curve for cross-border investing is steep. We founded Cross Border Real Estate Solutions to bridge this gap. We provide fellow Canadian investors with the roadmap we wish we had, helping them streamline the process and avoid costly structural pitfalls.
+				</p>
+			</div>
+			<div class="w-full md:w-1/3 flex justify-center">
+				<img src={`${base}/CrossBorder_Suit.jpg`} alt="Cross Border Real Estate Solutions Logo" class="rounded-lg w-full h-64 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+			</div>
+		</div>
+	</section>
+</Layout>

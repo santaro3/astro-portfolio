@@ -1,43 +1,73 @@
-# Astro Starter Kit: Minimal
+# Simple Astro Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This is a simple portfolio website built with [Astro](https://astro.build).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Structure
 
-## 🚀 Project Structure
+- `src/pages/index.astro`: The main portfolio page. Edit this file to add your own content.
+- `astro.config.mjs`: Configuration file. **You must update this with your GitHub Pages URL.**
 
-Inside of your Astro project, you'll see the following folders and files:
+## Setup
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1.  Install dependencies:
+    ```bash
+    npm install
+    ```
+2.  Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Configuration
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Open `astro.config.mjs` and update the `site` and `base` options:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `site`: Your GitHub Pages URL (e.g., `https://username.github.io`).
+- `base`: Your repository name (e.g., `/Portfolio`). If you are using a user site (`username.github.io`), set this to `/`.
 
-## 🧞 Commands
+## Deployment to GitHub Pages (No GitHub Actions)
 
-All commands are run from the root of the project, from a terminal:
+Since you are not using GitHub Actions, you need to manually build and deploy the `dist` folder to the `gh-pages` branch.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Option 1: Using `gh-pages` package (Recommended)
 
-## 👀 Want to learn more?
+1.  Install the package:
+    ```bash
+    npm install --save-dev gh-pages
+    ```
+2.  Add a deploy script to `package.json`:
+    ```json
+    "scripts": {
+      "deploy": "astro build && gh-pages -d dist"
+    }
+    ```
+3.  Run the deploy script:
+    ```bash
+    npm run deploy
+    ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Option 2: Manual Git Deployment
+
+1.  Build the project:
+    ```bash
+    npm run build
+    ```
+2.  This creates a `dist` folder.
+3.  Run the following commands (Git Bash or similar):
+    ```bash
+    git add dist -f
+    git commit -m "deployment"
+    git subtree push --prefix dist origin gh-pages
+    ```
+    *Note: You might need to remove `dist` from `.gitignore` temporarily or use `-f` to force add it.*
+
+    **Alternative Manual Method (if subtree fails):**
+    ```bash
+    cd dist
+    git init
+    git checkout -b gh-pages
+    git add -A
+    git commit -m "deploy"
+    git push -f https://github.com/<USERNAME>/<REPO>.git gh-pages
+    cd ..
+    ```

@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Work";
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+---
+
+<Layout title={pageTitle}>
+	<h1 class="font-serif text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight mb-8">{pageTitle}</h1>
+
+	<p class="text-xl leading-relaxed mb-16 opacity-90">
+		I'm a Research engineer at Ford Motor Company, pairing my curiosity with the Research department has allowed me to span the full spectrum of automotive development. My work ranges from embedded controls and calibration for advanced propulsion architectures (sPHEV, BEV, Fuel Cell, and EREV) to architecting GCP Cloud infrastructure and deploying Machine Learning models.
+	</p>
+
+	<section class="mb-16 sm:mb-24">
+		<h2 class="font-serif text-2xl italic mb-6 border-b border-[var(--border-main)] pb-2">Research Engineer (Cloud & Embedded Systems)</h2>
+
+		<div class="flex flex-col md:flex-row gap-4 items-center">
+			<div class="w-full md:w-4/5">
+				<h3 class="text-lg font-medium mb-6 opacity-80">Ford Motor Company</h3>
+				
+				<div class="mb-8">
+					<h4 class="font-serif text-xl mb-3">Cloud & DevOps Engineering</h4>
+					<ul class="list-disc list-outside ml-5 space-y-2 opacity-90 text-lg leading-relaxed">
+						<li><strong>Infrastructure as Code (IaC):</strong> Managed cloud resources and provisioning using Terraform on Google Cloud Platform.</li>
+						<li><strong>Containerization & Orchestration:</strong> Deployed scalable applications using Docker and Kubernetes to support engineering simulation tools.</li>
+						<li><strong>CI/CD Implementation:</strong> Built robust pipelines using GitHub Actions and Tekton to accelerate software delivery and testing cycles.</li>
+						<li><strong>Data Engineering:</strong> Implemented PySpark jobs for analyzing powertrain data and utilized Vertex AI for machine learning workflows.</li>
+					</ul>
+				</div>
+
+				<div>
+					<h4 class="font-serif text-xl mb-3">Automotive Engineering</h4>
+					<ul class="list-disc list-outside ml-5 space-y-2 opacity-90 text-lg leading-relaxed">
+						<li>Specialized in Propulsion Systems control theory and embedded software development.</li>
+						<li>Managed end-to-end validation processes from HIL/SIL simulation to physical Dyno and Proving Ground testing.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="w-full md:w-1/5 flex justify-center md:justify-start items-center">
+				<img src={`${base}/Ford_Logo.png`} alt="Ford Motor Company Logo" class="w-60 h-auto object-contain" />
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-16 sm:mb-24">
+		<h2 class="font-serif text-2xl italic mb-6 border-b border-[var(--border-main)] pb-2">Continuous Learning & Professional Development</h2>
+		
+		<div class="mb-8 flex flex-col md:flex-row gap-6 items-center">
+			<div class="w-full md:w-3/4">
+				<h3 class="font-serif text-xl mb-3">Certifications & Awards</h3>
+				<ul class="list-disc list-outside ml-5 space-y-2 opacity-90 text-lg leading-relaxed">
+					<li><strong>Google Cloud Platform (GCP) Certifications:</strong> [Insert specific names here, e.g., Associate Cloud Engineer, Professional Data Engineer].</li>
+					<li><strong>Udemy Learning Contest Winner:</strong> Recognized top learner at Ford for dedication to upskilling in emerging technologies.</li>
+				</ul>
+			</div>
+			<div class="w-full md:w-1/4 flex justify-center">
+				<img src={`${base}/Google Cloud.svg`} alt="Google Cloud" class="rounded-lg w-full h-40 object-contain shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+			</div>
+		</div>
+
+		<div class="mb-8 flex flex-col md:flex-row gap-6 items-center">
+			<div class="w-full md:w-3/4">
+				<h3 class="font-serif text-xl mb-3">Technical Proficiency</h3>
+				<ul class="list-disc list-outside ml-5 space-y-2 opacity-90 text-lg leading-relaxed">
+					<li><strong>Data Science & AI:</strong> Extensive study in Data Science; active participant in Kaggle competitions and Vertex AI.</li>
+					<li><strong>Modeling & Simulation:</strong> Advanced working experience in Matlab/Simulink for control system design and modeling.</li>
+					<li><strong>Web Development:</strong> Astro, Tailwind, Python/Dash/Streamlit for building internal tools and dashboards.</li>
+				</ul>
+			</div>
+			<div class="w-full md:w-1/4 flex justify-center">
+				<img src={`${base}/Machine Learnng.png`} alt="Machine Learning" class="rounded-lg w-full h-40 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+			</div>
+		</div>
+
+		<div class="flex flex-col md:flex-row gap-6 items-center">
+			<div class="w-full md:w-3/4">
+				<h3 class="font-serif text-xl mb-3">Industry Engagement</h3>
+				<ul class="list-disc list-outside ml-5 space-y-2 opacity-90 text-lg leading-relaxed">
+					<li><strong>Active Member:</strong> Regular attendee of Automotive Tech conferences, local AI group meetups, and GCP community events.</li>
+					<li><strong>Focus:</strong> Staying at the forefront of the intersection between Edge Computing (Vehicle) and Cloud Computing.</li>
+				</ul>
+			</div>
+			<div class="w-full md:w-1/4 flex justify-center">
+				<img src={`${base}/GDG_Windsor.png`} alt="GDG Windsor" class="rounded-lg w-full h-40 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+			</div>
+		</div>
+	</section>
+</Layout>

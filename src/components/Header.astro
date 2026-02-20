@@ -1,0 +1,25 @@
+---
+// Get the base path (e.g., "/Portfolio" or "/")
+const base = import.meta.env.BASE_URL;
+
+// Helper function to ensure clean links (avoids double slashes)
+const getPath = (path: string) => {
+  // Remove leading slash from path if base already ends with one
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  // If base is just "/", don't double it up
+  const cleanBase = base === '/' ? '' : base;
+  return `${cleanBase}/${cleanPath}`;
+};
+---
+<header class="border-b border-[var(--border-main)]">
+  <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href={getPath('')} class="text-xl font-bold font-serif">Sean Santarossa</a>
+    <ul class="flex space-x-6">
+      <li><a href={getPath('')} class="hover:underline decoration-1 underline-offset-2">Home</a></li>
+      <li><a href={getPath('about')} class="hover:underline decoration-1 underline-offset-2">About</a></li>
+      <li><a href={getPath('work')} class="hover:underline decoration-1 underline-offset-2">Work</a></li>
+      <li><a href={getPath('real-estate')} class="hover:underline decoration-1 underline-offset-2">Real Estate</a></li>
+      <li><a href={getPath('contact')} class="hover:underline decoration-1 underline-offset-2">Contact</a></li>
+    </ul>
+  </nav>
+</header>

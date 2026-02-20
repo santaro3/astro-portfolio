@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Contact";
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+---
+
+<Layout title={pageTitle}>
+	<div class="max-w-2xl mx-auto">
+		<h1 class="font-serif text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight mb-8">Contact</h1>
+
+		<p class="text-xl leading-relaxed mb-8 opacity-90">
+			I'm always excited to meet and connect with new people. If you want to contact me the best way is email - I'm not big into social media, I think it can be very useful and very rewarding but equally as dangerous.
+		</p>
+
+		<div class="mb-12 p-6 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border-main)]">
+			<h2 class="font-serif text-2xl italic mb-4">Personal or Business Inquiries</h2>
+			<p class="text-lg leading-relaxed mb-4 opacity-90">
+				The easiest way to do that is to send me an email.
+			</p>
+			<p class="text-lg leading-relaxed mb-4">
+				<a href="mailto:sean.hockey14@hotmail.com" class="text-xl font-medium underline decoration-1 underline-offset-4 hover:decoration-dashed text-[var(--accent)]">
+					sean.hockey14@hotmail.com
+				</a>
+			</p>
+			<p class="text-lg leading-relaxed opacity-90">
+				I check my email regularly and try to respond to all inquiries.
+			</p>
+		</div>
+
+		<div class="mb-12">
+			<img src={`${base}/portfolio_headshot.jpg`} alt="Sean Santarossa" class="rounded-lg w-full max-w-md mx-auto object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+		</div>
+	</div>
+</Layout>

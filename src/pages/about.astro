@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Me";
+const base = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+---
+
+<Layout title={pageTitle}>
+	<h1 class="font-serif text-3xl leading-tight font-medium sm:text-5xl sm:leading-tight mb-12">{pageTitle}</h1>
+
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 sm:mb-24">
+		<section id="backpacking">
+			<h2 class="font-serif text-2xl italic mb-6 border-b border-[var(--border-main)] pb-2">Backpacking and Hiking</h2>
+			<div class="flex flex-col lg:flex-row gap-6 items-start">
+				<div class="w-full lg:w-1/3">
+					<img src={`${base}/Backpacking.png`}  alt="Backpacking" class="rounded-lg w-full h-64 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+				</div>
+				<div class="w-full lg:w-2/3">
+					<p class="text-lg leading-relaxed opacity-90">
+						I enjoy exploring the outdoors through back country backpacking. It's a great way to disconnect from the hustle and bustle of life, learn some survival skills, and see the beauty of nature. 
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="running">
+			<h2 class="font-serif text-2xl italic mb-6 border-b border-[var(--border-main)] pb-2">Running</h2>
+			<div class="flex flex-col lg:flex-row gap-6 items-start">
+				<div class="w-full lg:w-1/3">
+					<img src={`${base}/Detroit_Half_Marathon.jpeg`} alt="Running" class="rounded-lg w-full h-64 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+				</div>
+				<div class="w-full lg:w-2/3">
+					<p class="text-lg leading-relaxed opacity-90">
+						Running is my way of staying active and clearing my mind. I enjoy challenging myself and building my tolerance for discomfort. I've run the Detroit Half Marathon a number of times as well as the Grand Rapids and Windsor Half Marathon!
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="hockey">
+			<h2 class="font-serif text-2xl italic mb-6 border-b border-[var(--border-main)] pb-2">Hockey</h2>
+			<div class="flex flex-col lg:flex-row gap-6 items-start">
+				<div class="w-full lg:w-1/3">
+					<img src={`${base}/Hockey_Team.png`} alt="Hockey" class="rounded-lg w-full h-64 object-contain shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+				</div>
+				<div class="w-full lg:w-2/3">
+					<p class="text-lg leading-relaxed opacity-90">
+						I'm a big fan of hockey (typical Canadian). I play on a local recreation team in Windsor. It's a great way to learn how to work with others, get your heart going, and meet new people.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="homelab">
+			<h2 class="font-serif text-2xl italic mb-6 border-b border-[var(--border-main)] pb-2">Home Lab</h2>
+			<div class="flex flex-col lg:flex-row gap-6 items-start">
+				<div class="w-full lg:w-1/3">
+					<img src={`${base}/HomeLab.png`} alt="Home Lab" class="rounded-lg w-full h-64 object-cover shadow-md grayscale hover:grayscale-0 transition-all duration-500" />
+				</div>
+				<div class="w-full lg:w-2/3">
+					<p class="text-lg leading-relaxed opacity-90">
+						I maintain a home lab to experiment with new technologies and self-host services. From running Kubernetes clusters, local OpenSense VPNs, ZFS RAID arrays, to Proxmox VMs, I am constantly justifying a new hardware upgrade.
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</Layout>
